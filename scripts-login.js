@@ -7,7 +7,22 @@ const login = () => {
         const email = $('#login-email');
         const enterEmail = email[0].value;
         const enterPassword = password[0].value;
-        console.log(enterPassword, enterEmail);
+
+        $.ajax({
+            url: "http://localhost:3000/login",
+            type: "POST",
+            dataType:'json',
+            data: {
+                email: enterEmail,
+                password: enterPassword,
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function(error){
+                console.log("Something went wrong", error);
+            }
+        });
     });
 };
 
