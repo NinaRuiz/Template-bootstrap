@@ -6,7 +6,9 @@ const loginButton = $('#login-button');
 const login = () => {
     loginButton.click(function (e) {
         e.preventDefault();
-        console.log('click');
+        const enterEmail = email[0].value;
+        const enterPassword = password[0].value;
+        console.log(enterPassword, enterEmail);
     });
 };
 
